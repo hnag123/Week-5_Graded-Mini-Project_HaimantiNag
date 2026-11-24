@@ -1,0 +1,22 @@
+openai>=1.30.0
+httpx>=0.27.0
+pandas>=2.0.0
+tabulate>=0.9.0
+# MP1_PromptLab - Python Dependencies
+
+# OpenAI-compatible API client
+openai
+# purpose of openai- AsyncOpenAI client for LLM API calls
+
+# Load environment variables from .env
+python-dotenv
+# purpose of python-dotenv- Loads API keys and configuration from .env
+ 
+# Data processing and comparison tables
+pandas
+# purpose of pandas- Creates and aggregates comparison tables
+
+# Jupyter Notebook support
+ipykernel
+jupyter
+# purpose of ipykernel-Runs Python notebooks, purpose of jupyter- Notebook environment
