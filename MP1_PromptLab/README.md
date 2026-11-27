@@ -27,22 +27,25 @@ The experiment uses an OpenAI-compatible API endpoint and Python asynchronous AP
 ## 3. Project Structure
 
 ```text
-AI-RAG_MP1_PromptLab/
+Week5_Graded_Mini_Project_HaimantiNag/
+│
+├── docs/
+│   ├── ADR/
+│   └── 002_prompting_strategy_capstone.md
 │
 ├── MP1_PromptLab/
 │   ├── data/
-│   │   ├── job_snippets.jsonl
-│   │   └── golden_set.jsonl
 │   │
-│   ├── notebooks/
-│   │   └── MP1_PromptLab.ipynb
+│   ├── mp1_prompt_lab/
+│   │   ├── .env
+│   │   ├── MP1_Assignment.ipynb
+│   │   ├── mp1_comparison.md
+│   │   └── mp1_writeup.md
 │   │
-│   └── README.md
+│   ├── README.md
+│   └── requirements.txt
 │
-├── .env
-├── .gitignore
-├── requirements.txt
-└── README.md
+└── .gitignore
 ```
 
 *Note: Adjust the notebook filename or folder paths if your actual project structure differs.*
@@ -68,13 +71,13 @@ pip install -r requirements.txt
 
 The main dependencies include:
 
-| Package | Purpose |
-|---|---|
-| openai | LLM API integration using AsyncOpenAI |
-| python-dotenv | Loading environment variables |
-| pandas | Data processing and comparison tables |
-| ipykernel | Jupyter notebook kernel |
-| jupyter | Notebook execution environment |
+| Package       | Purpose                               |
+| ------------- | ------------------------------------- |
+| openai        | LLM API integration using AsyncOpenAI |
+| python-dotenv | Loading environment variables         |
+| pandas        | Data processing and comparison tables |
+| ipykernel     | Jupyter notebook kernel               |
+| jupyter       | Notebook execution environment        |
 
 ## 5. Environment Configuration
 
@@ -134,14 +137,14 @@ Run the notebook cells sequentially.
 
 The notebook is organized into the following stages:
 
-| Step | Description |
-|---|---|
-| Step 1 | Setup environment, initialize API client, and load datasets |
-| Step 2 | Define the four prompting strategies |
+| Step   | Description                                                       |
+| ------ | ----------------------------------------------------------------- |
+| Step 1 | Setup environment, initialize API client, and load datasets       |
+| Step 2 | Define the four prompting strategies                              |
 | Step 3 | Execute asynchronous LLM API calls and collect extraction results |
-| Step 4 | Score extracted results against the golden set |
-| Step 5 | Aggregate metrics and generate the comparison table |
-| Step 6 | Write the experiment reflection and conclusions |
+| Step 4 | Score extracted results against the golden set                    |
+| Step 5 | Aggregate metrics and generate the comparison table               |
+| Step 6 | Write the experiment reflection and conclusions                   |
 
 ### Step 6: Review the results
 
@@ -202,12 +205,12 @@ Lower latency indicates faster response time.
 
 The following table summarizes the results obtained from the experiment. It compares the four prompting strategies based on mean accuracy, parse success rate, LLM judge score, total API cost, and median latency.
 
-| Strategy | Mean Accuracy (0–3) | Parse Success (%) | Mean Judge Score (1–25) | Total Cost (USD) | Median Latency (seconds) |
-|:---|---:|---:|---:|---:|---:|
-| COT | 2.9 | 100.0 | 25.0 | 0.000520 | 8.903 |
-| Few shot | 3.0 | 100.0 | 25.0 | 0.000602 | 4.423 |
-| Structured / Role based | 2.9 | 100.0 | 25.0 | 0.000565 | 6.486 |
-| Zero shot | 2.9 | 100.0 | 25.0 | 0.000464 | 2.358 |
+| Strategy                | Mean Accuracy (0–3) | Parse Success (%) | Mean Judge Score (1–25) | Total Cost (USD) | Median Latency (seconds) |
+| :---------------------- | -------------------: | ----------------: | -----------------------: | ---------------: | -----------------------: |
+| COT                     |                  2.9 |             100.0 |                     25.0 |         0.000520 |                    8.903 |
+| Few shot                |                  3.0 |             100.0 |                     25.0 |         0.000602 |                    4.423 |
+| Structured / Role based |                  2.9 |             100.0 |                     25.0 |         0.000565 |                    6.486 |
+| Zero shot               |                  2.9 |             100.0 |                     25.0 |         0.000464 |                    2.358 |
 
 Few-shot prompting offers a good starting point when extraction accuracy is the priority.
 while Zero-shot prompting which Achieved a mean accuracy of 2.9 and had the lowest estimated cost of $0.000466,Had the fastest median latency of 2.001 seconds, is a good choice when speed and cost efficiency are important.
@@ -233,6 +236,7 @@ All four strategies achieved 100% parse success and a mean judge score of 25 out
 The results demonstrate that the best prompting strategy depends on the application requirements and the trade-off between accuracy, speed, and cost.
 
 ## 9. Troubleshooting
+
 Problem
 Possible Solution
 API authentication error (401)
@@ -255,6 +259,7 @@ Verify the judge model and API configuration
 Potential improvements include: Testing additional LLM models, Evaluating a larger and more diverse dataset, Refining prompts to handle ambiguous job descriptions, Combining few-shot examples with structured output instructions, Improving the LLM judge evaluation rubric, Comparing additional metrics such as precision, recall, and F1-score, Optimizing API costs and response latency.
 
 ## 11. Technologies Used
+
 Python
 Jupyter Notebook
 OpenAI-compatible API

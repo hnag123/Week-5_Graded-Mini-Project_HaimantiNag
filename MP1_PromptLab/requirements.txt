@@ -1,22 +1,11 @@
-openai>=1.30.0
-httpx>=0.27.0
-pandas>=2.0.0
-tabulate>=0.9.0
-# MP1_PromptLab - Python Dependencies
-
-# OpenAI-compatible API client
-openai
-# purpose of openai- AsyncOpenAI client for LLM API calls
-
-# Load environment variables from .env
-python-dotenv
-# purpose of python-dotenv- Loads API keys and configuration from .env
- 
-# Data processing and comparison tables
-pandas
-# purpose of pandas- Creates and aggregates comparison tables
-
-# Jupyter Notebook support
-ipykernel
-jupyter
-# purpose of ipykernel-Runs Python notebooks, purpose of jupyter- Notebook environment
+# MP1_PromptLab 
+# python env 3.14
+# dotenv  loads key-value pairs from .env file into my application's environment variables so I can manage configuration and secrets outside my source code.
+# Together, these seven libraries (listed below) form the standard toolkit for building scalable AI data-processing pipelines in Python. 
+# openai (AI Integration). Connects my script to OpenAI's API to send prompts and receive generated text, structured data, or embeddings. 
+# asyncio (Concurrency & Speed). Enables asynchronous programming using async and await so my script can send multiple API requests at the same time instead of waiting for them one by one.
+# pandas (Data Manipulation). Loads, cleans, and structures tabular data into DataFrames. 
+# json (Data Parsing). Converts data between Python dictionaries and JSON strings. 
+# os (Environment & File System). Interacts with operating system to safely read secret environment variables (like OPENAI_API_KEY) without hardcoding them into your script.
+# re (Text Cleaning & Extraction). Provides regular expressions to search, match, or clean text patterns.
+# time (Rate Limiting & Benchmarking). Tracks how long scripts take to execute and pauses execution (time.sleep()) when needed. 

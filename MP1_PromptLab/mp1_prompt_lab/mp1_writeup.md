@@ -16,3 +16,6 @@ If I had another day, I would test the strategies using a larger and more divers
 
 ## Conclusion
 This experiment helped me understand that different prompting strategies offer different advantages. Few-shot prompting provided the highest accuracy, whereas Zero-shot prompting offered the best cost and latency performance. I learned that choosing a prompting strategy depends on the application's priorities, and that accuracy, response consistency, cost, and speed must all be considered when developing a practical AI application.
+
+## Git repository
+https://github.com/hnag123/Week-5_Graded-Mini-Project_HaimantiNag
